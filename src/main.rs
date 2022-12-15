@@ -1,13 +1,13 @@
-use rustmenu::menu::*;
+use rustmenu::menubuilder::*;
 
 fn main() {
-    let mut menu = Menu::new();
-
-    menu.add_text("What would you like to do?");
-    menu.add_empty_line();
-    menu.add_option("1. New Game", Some(menu_start_game));
-    menu.add_option("2. Options", Some(menu_options));
-    menu.add_option("3. End Game", Some(menu_end_game));
+    let menu = MenuBuilder::new()
+        .add_text("What would you like to do?")
+        .add_empty_line()
+        .add_option("1. New Game", Some(menu_start_game))
+        .add_option("2. Options", Some(menu_options))
+        .add_option("3. End Game", Some(menu_end_game))
+        .build();
 
     menu.start();
 }
