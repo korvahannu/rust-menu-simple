@@ -10,5 +10,6 @@ path ="src/lib.rs"
 path = "src/main.rs"
 name = "rust-menu"
 
-[dependencies]
-ncurses = "5.101.0"
+[dependencies.ncurses]
+version = "5.101.0"
+features = ["wide"]
